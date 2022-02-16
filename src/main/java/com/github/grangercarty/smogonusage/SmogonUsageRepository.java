@@ -10,15 +10,26 @@ public class SmogonUsageRepository {
 
     public SmogonUsageRepository(String fileName) {
         File smoUsageFile = new File(fileName);
+        load (smoUsageFile);
+    }
+
+    public void load(File file) {
         try {
-            Scanner scanner = new Scanner(smoUsageFile);
+            Scanner scanner = new Scanner(file);
             scanner.useDelimiter("\n");
-            int i = 0;
             while (scanner.hasNext()) {
-                scanner.next();
+                String usageString = scanner.next();
+                if (isMon(usageString)) {
+                    Pokemon mon = new Pokemon(usageString);
+                    smoUsageList.add(mon);
+                }
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public boolean isMon(String usageString) {
+        return true;
     }
 }
