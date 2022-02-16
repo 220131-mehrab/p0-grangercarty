@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SmogonUsageRepository {
-    public ArrayList<Pokemon> smoUsageList;
+    public ArrayList<SmogonPokemonUse> smoUsageList;
 
     public SmogonUsageRepository(String fileName) {
         File smoUsageFile = new File(fileName);
@@ -19,17 +19,13 @@ public class SmogonUsageRepository {
             scanner.useDelimiter("\n");
             while (scanner.hasNext()) {
                 String usageString = scanner.next();
-                if (isMon(usageString)) {
-                    Pokemon mon = new Pokemon(usageString);
+                if (SmogonPokemonUse.isSmoUsage(usageString)) {
+                    SmogonPokemonUse mon = new SmogonPokemonUse(usageString);
                     smoUsageList.add(mon);
                 }
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    public boolean isMon(String usageString) {
-        return true;
     }
 }
