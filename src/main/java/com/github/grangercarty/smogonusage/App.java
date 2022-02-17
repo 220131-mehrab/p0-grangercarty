@@ -5,5 +5,6 @@ public class App {
         SmogonUsageRepository smoUsageRepository = new SmogonUsageRepository("gen8ou_2022_01.txt");
         SmogonUsageService smoUsageService =  new SmogonUsageService(smoUsageRepository);
         Server server = new Server(smoUsageService);
+        server.run();
     }
 }
