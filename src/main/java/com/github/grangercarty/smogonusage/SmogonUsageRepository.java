@@ -8,12 +8,12 @@ import java.util.Scanner;
 public class SmogonUsageRepository {
     public ArrayList<SmogonPokemonUse> smoUsageList;
 
-    public SmogonUsageRepository(String fileName) {
-        File smoUsageFile = new File(fileName);
-        load (smoUsageFile);
+    public SmogonUsageRepository() {
+        this.smoUsageList = new ArrayList<>();
     }
 
-    public void load(File file) {
+    public void load(String fileName) {
+        File file = new File(fileName);
         try {
             Scanner scanner = new Scanner(file);
             scanner.useDelimiter("\n");
@@ -26,6 +26,12 @@ public class SmogonUsageRepository {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void printUsageRepo() {
+        for (int i = 0; i < smoUsageList.size(); i++) {
+            smoUsageList.get(i).printPokemonUsage();
         }
     }
 }

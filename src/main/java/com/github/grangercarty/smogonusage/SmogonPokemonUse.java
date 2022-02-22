@@ -28,4 +28,8 @@ public class SmogonPokemonUse {
     public String getUsageRate() {
         return usageRate;
     }
+
+    public void printPokemonUsage() {
+        System.out.println(rank + "," + pokemonName + "," + usageRate);
+    }
 }

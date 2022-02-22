@@ -3,7 +3,7 @@ package com.github.grangercarty.smogonusage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class PokemonUseTest {
+public class SmogonPokemonUseTest {
 
     @Test
     public void isSmoUseTest() {

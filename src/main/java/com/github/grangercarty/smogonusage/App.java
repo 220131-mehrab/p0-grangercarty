@@ -2,9 +2,9 @@ package com.github.grangercarty.smogonusage;
 
 public class App {
     public static void main(String[] args) {
-        SmogonUsageRepository smoUsageRepository = new SmogonUsageRepository("gen8ou_2022_01.txt");
+        SmogonUsageRepository smoUsageRepository = new SmogonUsageRepository();
         SmogonUsageService smoUsageService =  new SmogonUsageService(smoUsageRepository);
-        Server server = new Server(smoUsageService);
+        SmogonUsageServer server = new SmogonUsageServer(smoUsageService);
         server.run();
     }
 }
